@@ -1,0 +1,55 @@
+			      Alizarin Tetris
+			      ~~~~~~~~~~~~~~~
+			  Version 1.0.5 - "Donna"
+
+This is a Linux/Win32 version of the classic Tetris game, but with a twist
+related to gravity and block colors. Getting it to run on your system is a
+Two Step Process :-). 
+
+		Step 1 - Obtain It
+		~~~~~~~~~~~~~~~~~~
+If you're reading this file, you've already mastered this step. Just in
+case, check out
+	http://www.cs.berkeley.edu/~weimer/atris/
+
+		Step 2 - Method A - Win32 Binary
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+UnZip the file (atris-1.0.5-win32.zip) in some directory (e.g., "C:\Program
+Files\"). It will make its own "atris" subdirectory. You're done. Use
+Windows Explorer (or somesuch) to run the "atris.exe" file in that
+directory. 
+
+Optional: UnZip the file (atris-sounds-1.0.1-win32.zip) in the same
+directory (e.g., "C:\Program Files\"). Now you'll have neato sound effects. 
+
+		Step 2 - Method B - Linux Binary RPM
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Download and install (rpm -i) the following RPMs:
+	freetype-1.3.1-1.i386.rpm	(or newer, but not version 2)
+	SDL-1.1.6-1.i386.rpm		(or newer)
+	SDL_ttf-1.2.2-1.i386.rpm	(or newer)
+	atris-1.0.5-1.i386.rpm		(or newer)
+	atris-sounds-1.0.1-1.noarch.rpm (or newer, optional)
+
+Run "atris" at any shell prompt. 
+
+		Step 2 - Method C - Use The Source
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Download, unpack, configure, make, make install:
+	freetype-1.3.1.tar.gz		(or newer, but not version 2)
+	SDL-1.1.6.tar.gz		(or newer)
+	SDL_ttf-1.2.2.tar.gz		(or newer)
+	atris-1.0.5.tar.gz		(or newer)
+	atris-sounds-1.0.1.tar.gz	(or newer, optional)
+
+I have successfully built the atris source on x86-linux natively and using
+the mingwin unix->win32 cross compiler. Every effort has been made to make
+it portable across platforms.
+	
+		You're Done!
+		~~~~~~~~~~~~
+Atris does take some command line arguments, use "atris -h" to get a list.
+Note that under Win32, all the output goes to "stdout.txt".
+
+See "Docs/atris.html" for instructions on actually playing the game and
+strategy hints. 

@@ -1,0 +1,800 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title>Atris Documentation</title>
+</head>
+<body>
+<A NAME="top">
+<CENTER>
+<TABLE WIDTH=80% CELLPADDING=3>
+  <TR><TD>
+<CENTER>Table of Contents</CENTER>
+<HR WIDTH=130>
+<A HREF="#quick-start">0. Quick-Start Guide</A><BR>
+<P>
+<A HREF="#intro">1. Introduction</A><BR>
+<P>
+<A HREF="#howto">2. How to...</A><BR>
+<A HREF="#run">2.1 Run atris</A><BR>
+<A HREF="#play">2.2 Play</A><BR>
+<A HREF="#commands">2.3 Use the keyboard</A><BR>
+<A HREF="#menus">2.4 Navigate the menus</A><BR>
+<A HREF="#games">2.5 Game types</A><BR>
+<P>
+<A HREF="#config">3. Configuration</A><BR>
+<A HREF="#color">3.1 Color styles</A><BR>
+<A HREF="#sound">3.2 Sound styles</A><BR>
+<A HREF="#shape">3.3 Shape styles</A><BR>
+<A HREF="#special">3.4 Special options</A><BR>
+<P>
+<A HREF="#concepts">4. Game concepts</A><BR>
+<A HREF="#gravity">4.1 Color gravity</A><BR>
+<A HREF="#garbage">4.2 Multiplayer interference</A><BR>
+<A HREF="#power">4.3 Power pieces</A><BR>
+<A HREF="#score">4.4 Scoring</A><BR>
+<A HREF="#level">4.5 Level progression</A><BR>
+<P>
+<A HREF="#bugs">5. Troubleshooting</A><BR>
+<A HREF="#windows">5.1 Under Windows</A><BR>
+<A HREF="#linux">5.2 Under Linux</A><BR>
+<A HREF="#mac">5.3 Under Macintosh</A><BR>
+<P>
+<A HREF="#create">Appendix A. Create your own styles</A><BR>
+      
+  </TD>
+
+  <TD>
+      <CENTER>
+<!-- jpg here for title? -->
+<B><FONT SIZE=+2>Atris: Alizarin Tetris</FONT></B><BR>
+<FONT SIZE=+1>Documentation</FONT><BR>
+<P>
+<IMG BORDER=1 WIDTH=320 HEIGHT=240 SRC="Atris-FunShot.jpg">
+      </CENTER>
+  </TD></TR>
+</TABLE>
+</CENTER>
+
+<HR>
+
+<A NAME="quick-start">
+<B>0. Quick-Start Guide</B>
+<P>
+If you are already familiar with Tetris-like games, just read the sections
+on <a href="#gravity">color gravity</a> and <a href="#power">power
+pieces</a>, then <a href="#run">run the game</a>. 
+
+<HR>
+
+<A NAME="intro">
+<B>1. Introduction</B>
+<P>
+
+<TABLE ALIGN=RIGHT CELLPADDING=3>
+<TR><TD><IMG SRC="Atris-OpeningScreen.jpg" HSPACE=10><BR>
+<center><small>Atris Opening Screen</small></center>
+</TD>
+</TR></TABLE>
+
+In this shot of the opening screen, all of the default options are active.
+<P>
+Alizarin Tetris generally responds to both the mouse and the keyboard. When
+you start the game you should see a tetris demo in the center of the screen
+and the Main Menu to the left. You can use the arrow
+keys to navigate up and down. Pressing enter or clicking with the
+mouse on one of the options will either bring up a selection submenu,
+start an actual game, or quit the program, as appropriate.
+  <P>
+The submenus allow you to modify your playing environment.  Currently,
+  you can select from different <A HREF="#color"><B>Color
+  Styles</B></A>, <A HREF="#sound"><B>Sound Styles</B></A>, <A
+  HREF="#piece"><B>Piece Styles</B></A>, and <A HREF="#games"><B>Game
+  Types</B></A>.
+The current value for each option is displayed in the main menu.
+<P>
+You can also select the <A HREF="#special"><B>Special Options</B></A>
+submenu, which contains a set of toggles for special effects.
+<P>
+Each time you modify one of these options, the demo game will restart
+  using your new preferences (so you can get a preview of what they
+  look like without actually playing a game). Also, every time the
+  demo game restarts it will choose a new computer "personality" (AI
+  player).
+<BR CLEAR=ALL>  
+<P>
+<A HREF="#top">Table of Contents</A>
+<HR>
+
+<A NAME="howto">
+<B>2. How to...</B>
+<P>
+This section describes how to perform basic atris actions (like running the
+game and controlling falling pieces). 
+<P>
+<A NAME="run">
+<B>2.1 Run atris</B>
+<P>
+Under Linux, you can usually run atris from the command prompt:
+<PRE>
+	your_machine$ atris
+</PRE>
+If you installed atris (via "rpm -i" or "make install"), that should work
+(atris will probably be in "/usr/bin/"). If you downloaded the source and
+just compiled it, you must change to the top-level directory of the source
+distribution to run it:
+<PRE>
+	your_machine$ cd /usr/src/atris-1.0.5
+	your_machine$ ./atris
+</PRE>
+The RPM version of atris claims to add links for Gnome and KDE desktops,
+but we haven't tested them. 
+<P>
+Under Windows, you can also run atris from the command prompt:
+<PRE>
+	C:\Program Files\atris\> atris.exe
+</PRE>
+... or by clicking on it via Windows Explorer or somesuch. Note that in any
+event, atris looks for its game files both in the current directory and in
+a distribution directory (usually /usr/games/atris/ or
+C:\Program&nbsp;Files\atris\). If it exits shortly after starting up, make
+sure those game files are available to it and try running it by hand in the
+right directory. 
+
+<P>
+
+<A NAME="play">
+<B>2.2 Play</B>
+<P>
+<TABLE CELLPADDING=3>
+<TR> <TD VALIGN=CENTER>
+The object of the game is to clear all of the initial "garbage" from the bottom of the screen. One at a time,
+randomly chosen pieces will fall from 
+the top center of the board. You can guide them left and right and also
+rotate them. Eventually they will settle near the bottom. Whenever you
+completely fill an entire row (that's horizontal!) it disappears and the
+pieces above it <A HREF="#gravity">fall down</A> to fill the
+void. Generally there is some sort of 
+time limit. Eventually, if you keep succeeding, you will advance to the
+next "level": at higher levels there is more garbage and the pieces fall
+faster (so you have less time to think). 
+</TD>
+
+<TD VALIGN=CENTER>
+<IMG SRC="Atris-Win1.jpg" HSPACE=10><br>
+<center><small>Atris: About to Win</small></center>
+</TD>
+</TR>
+
+<TR> <TD VALIGN=CENTER>
+If you cannot clear the rows and
+the pile gets all the way to the top of
+the screen (such that your next
+falling piece cannot be placed), you <A HREF="#level">lose that round</A>. 
+</TD><TD VALIGN=CENTER>
+<IMG SRC="Atris-TopOut1.jpg" HSPACE=10><br>
+<center><small>Atris: About to Lose (oh no!)</small></center>
+</TD>
+
+</TR>
+</TABLE>
+
+<P>
+<!-- commands -->
+
+<A NAME="commands">
+<B>2.3 Use the keyboard</B>
+<P>
+<TABLE WIDTH=80% CELLPADDING=3 BORDER=1>
+  <TR><TD>[ a ]<BR>[ Left Arrow ]</TD>
+      <TD>Move your piece left.</TD></TR>
+  <TR><TD>[ d ]<BR>[ Right Arrow ]</TD>
+      <TD>Move your piece right.</TD></TR>
+  <TR><TD>[ s ]<BR>[ Down Arrow ]</TD>
+      <TD>Drop your piece quickly (move again to cancel!).</TD></TR>
+  <TR><TD>[ w ]<BR>[ Up Arrow ]</TD>
+      <TD>Rotate your piece.</TD></TR>
+  <TR><TD>[ p ]</TD>
+      <TD>Pause (or Un-Pause) the game.</TD></TR>
+</TABLE>
+</CENTER>
+<P>
+
+If you are the only person at your keyboard, you can use either (or both)
+sets of keys. If you are playing with two players at one keyboard, the
+player on the left uses "wasd" and the player on the right uses the arrow
+keys. 
+<P>
+You may press <B>[ q ]</B> at (just about) any time to quit. From the main
+menu, you may press <B>[ f ]</B> to toggle full-screen mode (if supported).
+<P>
+
+<A NAME="menus">
+<B>2.4 Navigate the menus</B>
+<P>
+<TABLE CELLPADDING=3><TR>
+<TD VALIGN=CENTER>
+All of the menus in Alizarin Tetris are "radio menus" in the sense that
+only one item from the menu can be selected at any one time. If there are
+multiple menus visible on the screen, the currently active one will have a
+light border around it. The current selection in each menu will be
+highlighted as well. In this shot of the opening
+screen, the menu on the right is the active one and "Solo
+Normal Game" is the currently selected menu item. 
+<P>
+Use the up and down arrow keys to change the selected item in the current
+menu. Press enter to confirm your selection and move on. You may also just
+click on your desired choice.  Menus may contain more options than can
+  be displayed simultaneously.  There is no actual way to tell that
+  this is happening (sorry!).  If this is the case, you should use
+  the arrow keys to scroll.
+<P>
+If more than one menu is available, you may use the left and right arrow
+keys to change which menu is selected. Then use the up and down arrows to
+choose something from that new menu. Or you can just click with the mouse.
+</TD>
+<TD VALIGN=CENTER>
+<IMG SRC="Atris-OpeningScreen2.jpg" HSPACE=10><br>
+<center><small>Atris: Opening Menus</small></center>
+</TD>
+</TR></TABLE>
+<P>
+
+<A NAME="games">
+<B>2.5 Game types</B>
+<P>
+Alizarin Tetris currently supports six different game types which can
+be selected from the opening screen. A description of each one follows.
+
+<P>
+<A NAME="solo">
+<TABLE CELLPADDING=3>
+  <TR><TD VALIGN=CENTER><B><A HREF="Atris-SoloGame.jpg">Solo Normal Game</A></B></TD>
+  <TD> After you <A HREF="Atris-WhoAreYou1.jpg">choose your
+      personality</A>, you have five total 
+      minutes in which to clear boards of your current level three
+      times. If you succeed all three times, you advance to the
+      next level. If you fail (<A HREF="Atris-TopOut1.jpg">top
+      out</A>, run out of time) all three 
+      times you devolve to the previous level. In this game, the
+      time is a hard limit: as soon as it runs out, it's over!
+  </TD>
+  <TD VALIGN=CENTER>
+  <IMG SRC="Atris-SoloGame.jpg" HSPACE=10><br>
+  <center><small>Atris: Solo Normal Game</small></center>
+  </TD>
+  </TR>
+  <TR><TD VALIGN=CENTER><B><A HREF="Atris-Marathon.jpg"> Solo Scoring Marathon </A></B></TD>
+  <TD>After you <A HREF="Atris-WhoAreYou1.jpg">choose your
+      personality</A>, you have five minutes per 
+      level in which to play. If you clear the board, you advance
+      to the next level. The object is to increase your score as
+      much as possible by clearing multiple lines at the same
+      time, so you may want to hang around on a level and rack up
+      more points. Note that the level you getto in Scoring
+      Marathon mode isn't saved.
+  </TD>
+  <TD VALIGN=CENTER>
+  <IMG SRC="Atris-Marathon.jpg" HSPACE=10><br>
+  <center><small>Atris: Solo Scoring Marathon</small></center>
+  </TD>
+  </TR>
+  <TR><TD VALIGN=CENTER><B><A HREF="Atris-PlayAI.jpg">Solo vs. Computer</A></B></TD>
+  <TD>After you <A HREF="Atris-WhoAreYou1.jpg">choose your
+      personality</A> (and <A 
+      HREF="Atris-ChooseAI.jpg">pick your favorite computer
+      player</A>), you will be given a chance to specify a difficulty level
+      for it. This level represents the delay between times when the AI is
+	  given a chance to think or move. Low values make for a harder
+	  game. High values make for an easy game. If you select 0, the
+	  rate will be automatically tied to the current game level. You
+	  then have five total minutes in which to clear a board of your
+	  current level three times. On your right, the computer player is
+	  trying to do the same thing! The other player is given exactly
+	  the same garbage as you and exactly the same pieces in exactly
+	  the same order, so it's more of a contest of skill. In this (and
+	  other multi-player modes) the players can <A
+	  HREF="#garbage">interfere with each other</A>. In this (and other
+	  multi-player modes), time is not a hard limit (but see level
+	  adjustments below).
+  </TD>
+  <TD VALIGN=CENTER>
+  <IMG SRC="Atris-PlayAI.jpg" HSPACE=10><br>
+  <center><small>Atris: Solo vs. Computer</small></center>
+  </TD>
+  </TR>
+  <TR><TD VALIGN=CENTER><B><A HREF="Atris-TwoPlayers2.jpg">2 Players, 1 Keyboard</A></B></TD>
+  <TD>This is for when you and a friend are at the same computer. You
+      each get a different set of keys and you play at the same time,
+      just like in <A HREF="#solo">"Solo vs. Computer" mode</A>.
+      Again, each player is 
+      trying to clear the board three times in five minutes in order
+      to advance a level. Time is not a hard limit and you can
+      <A HREF="#garbage">interfere with each other</A>.
+  </TD>
+  <TD VALIGN=CENTER>
+  <IMG SRC="Atris-TwoPlayers2.jpg" HSPACE=10><br>
+  <center><small>Atris: 2 Players, 1 Keyboard</small></center>
+  </TD>
+  </TR>
+  <TR><TD VALIGN=CENTER><B><A HREF="Atris-TwoPlayers2.jpg">2 Players, Network</A></B></TD>
+  <TD>In this mode, you and a friend both have identical versions of 
+      Alizarin Tetris running on two different computers that can
+      reach each other via TCP/IP. We have not tested this over
+      modem-speed connections: I recommend 10baseT or better LANs. You
+      must determine beforehand who will be the "server" and who will
+      be the "client". The client must know the hostname (or IP
+      address) of the server. Both players must choose color styles with
+      the same number of colors (but they may choose different styles) and
+      piece styles with the same number of shape (if you do not, the
+      game will issue a warning). Both players will receive identical
+      garbage and falling pieces. The game plays just like "2 Players, 1
+      Keyboard" except that you see less frequent updates of your
+      opponent's progress on the right. After each level, the player
+      running the server gets to choose when the next level starts, so the
+      client must be ready!
+  </TD>
+  <TD VALIGN=CENTER>
+  <IMG SRC="Atris-TwoPlayers2.jpg" HSPACE=10><br>
+  <center><small>Atris: 2 Players, Network</small></center>
+  </TD>
+  </TR>
+  <TR><TD VALIGN=CENTER><B><A HREF="Atris-FunShot.jpg"> Computer vs. Computer </A></B></TD>
+  <TD>In this mode, you pick two AI personalities and watch them duel
+      with each other (as in all of the other multi-player variants
+      above). This is mostly useful because it allows you to pick up
+      on strategy by watching the AI: it often does really stupid
+      things which you should avoid and it often does really clever
+      "look-ahead" type things which you should strive to emulate.
+  </TD>
+  <TD VALIGN=CENTER>
+  <IMG SRC="Atris-FunShot.jpg" HSPACE=10><br>
+  <center><small>Atris: Computer vs. Computer</small></center>
+  </TD>
+  </TR>
+</TABLE>
+<P>
+<A HREF="#top">Table of Contents</A>
+<HR>
+
+<A NAME="config">
+<B>3. Configuration</B>
+<P>
+Alizarin Tetris is highly configurable.  It supports a variety of styles
+for the tetris pieces (in color and shape) and the game sounds. 
+<P>
+<A NAME="color">
+<B>3.1 Color styles</B>
+<P>
+You can stick with the "Default Color Scheme" or you can switch to one of
+our pre-made color schemes (e.g., "Deep Blue" or "Textures"). Color styles
+just change the way in which the tetris pieces are drawn: they do not
+affect game mechanics in any way. [ Note, however, that the "all blue" and
+"all grey" styles make for a more difficult game for human players because
+the different colors look similar, although not identical. ]
+<P>
+
+You can also create your own color styles with your own graphics (no need
+to recompile!) ... more on that <A HREF="#create">later</A>. 
+<P>
+
+<A NAME="sound">
+<B>3.2 Sound styles</B>
+<P>
+You can stick with the "Default Sound Style", which includes pretty
+standard bells and whistles for thudding pieces, clearing rows, and level
+changes. You can also pick "No Sound", which blesses you with silence.
+If you specify <B>-q</B> on the command line, "No Sound" will be the
+only available choice. A
+few other themes are provided. When you choose a new sound style, all of
+the associated sounds are played in sequence so that you can get a feel for
+them. 
+<P>
+
+You can also create your own sound styles if you have some WAV files lying
+around (without recompiling!) ... more on that <A HREF="#create">later</A>. 
+<P>
+
+<A NAME="shape">
+<B>3.3 Shape styles</B>
+<P>
+You can stick with the "Default Tetris Pieces" (i.e., the planar
+tetrominoes) or you can try for something more exciting. As math fans, we
+like the planar pentominoes here (think tetris pieces with an "area" of 5
+instead of 4), so you can play with them exclusively (hard!) or with all of
+the tetris-like pieces that can be made up of 1-5 units. 
+<P>
+
+The other shape styles look difficult at first but they can be a lot of
+fun, especially if you're getting bored with standard Tetris. 
+<P>
+
+In an incredible surprise move, you can create your own shape styles as
+well. See <A HREF="#create">below</A>. 
+<P>
+
+<A NAME="special">
+<B>3.4 Special options</B>
+<P>
+Special options control certain specific characteristics of the game's
+mechanics and appearance. They are listed under the Special Options submenu.
+Clicking (or pressing return) on a special option toggles its value. 
+<UL>
+  <LI><B>Toggle Fullscreen</B> allows you to switch back and forth
+      from window-mode to full-screen mode while running the game. This
+      only works on some platforms. Note that you can (try to) start in
+      fullscreen mode by using the "-f" option.
+  <LI><B>Background Flame</B> toggles whether or not you get the
+      animated flames in the background. Turning this off will
+      leave whatever flames you currently have static and significantly
+      decrease the atris CPU demand.
+  <LI><B>Power Pieces</B> toggles whether or not you can receive
+      some of our <A HREF="#power">power pieces</A>
+      (incorporated by special request). 
+  <LI><B>Double Difficulty</B> requests the amount of garbage and the speed
+	with which pieces fall to increase with every level. With <B>Double
+	Difficulty</B> turned off, each increase in level alternates
+	between increasing the speed of falling pieces and increasing the
+	amount of garbage. Network players must both have the same value
+	for this option.
+  <LI><B>Long Settle Delay</B> doubles the amount of time you have to react
+	after a piece settles but before it "locks in". If you attempt to
+	make a valid move or rotation within that small window, the piece
+	will move and the window will be reset, allowing you to slide the
+	piece along even after it has apparently landed. This option
+	changes the settle delay from 0.2 seconds to 0.4 seconds. 
+  <LI><B>Upward Rotation</B> allows the game to consider moving your piece
+	upward when determining if a rotation is possible. If you have
+	nimble fingers, this option will allow you to hold off settling
+	indefinitely with many pieces or to "walk" pieces across vast
+	stretches of terrain. Since this affects the game balance, both
+	network players must have the same value for this option.
+</UL>
+
+<A HREF="#top">Table of Contents</A>
+<HR>
+
+<A NAME="concepts">
+<B>4. Game concepts</B>
+<P>
+This section details differences between Alizarin Tetris and general tetris
+clones.<P>
+
+<A NAME="gravity">
+<B>4.1 Color gravity</B>
+<P>
+<IMG ALIGN=LEFT SRC="Atris-ColorGravity1.jpg" HSPACE=10>
+Unlike normal Tetris, in this variant a single tetris piece can be made up
+of tiles of two different colors. For example, the "L" piece could
+look like the figure on the left.
+<P>
+
+When the piece finally "touches down" on some other pieces near the bottom
+of the board, we first check to see if any rows should be cleared. If so,
+they are immediately removed. 
+<P>
+
+<IMG ALIGN=LEFT SRC="Atris-ColorGravity2.jpg" HSPACE=10>
+Now, all of the little tiles of the same color that are adjacent to each
+other (from this most recent piece or from any previously-placed piece)
+"merge" together and become a cohesive unit. In our running example,
+no mergers take place: the figure at left shows the same piece after it has
+touched down.
+<P>
+<br>
+<P>
+
+<IMG ALIGN=LEFT SRC="Atris-ColorGravity3.jpg" HSPACE=10>
+Then gravity takes effect, and all of the merged cohesive units fall
+separately. The effect of this is that if your currently-falling piece is
+made up of two colors, it will "fall into pieces" when it touches down and
+those pieces will "slide past each other".  The figure at left shows
+the same the upper left corner falling separately. 
+<P>
+<br>
+<P>
+
+<IMG ALIGN=LEFT SRC="Atris-ColorGravity4.jpg" HSPACE=10>
+Such falling pieces eventually come to rest. If a piece falls like that and
+just happens to fill up another row, that row is cleared and the process
+repeats itself. Every row you clear as a result of placing one single piece
+is summed up for the purposes of scoring and interfering with your
+opponents. What this means is that you can, in fact, clear <B>more than
+four lines</B> by dropping a single piece. 
+<P>
+
+<IMG ALIGN=LEFT SRC="Atris-ColorGravity5.jpg" HSPACE=10>
+Finally, adjacent tiles of the same color merge again. In our runing
+example, the piece that had been falling has come to rest and merges with
+its lower part.
+<P>
+
+This can take a little getting used to, but it adds a lot to the game.
+Watch the demo for a bit to get the hang of it. 
+<P>
+<A NAME="garbage">
+<B>4.2 Multiplayer interference</B>
+<TABLE CELLPADDING=3><TR>
+<TD VALIGN=CENTER>
+In a multi-player game (AI players count!), if you clear 3 more or rows at
+once, your opponent's screen will be obscured for a time. They can
+  still move and their pieces still fall, 
+but they cannot see (AI players are prevented from "thinking" but can still
+"move"). If you clear 3 or more rows twice in quick succession, the "blank"
+timeout extends. In the example screenshot,
+the screen for the player on the right has been obscured. When the random
+fill-in image reaches the bottom, the normal view returns.
+<P>
+If you clear 5 or more rows at once, an extra row of garbage will be added
+at the bottom of your opponent's board. Ouch!
+<P>
+If you clear 7 or more rows at once (I've never seen this ...), your
+unlucky opponent gets both the garbage and the blanking. 
+</TD>
+<TD>
+<IMG SRC="Atris-Obscure.jpg" HSPACE=10><br>
+<center><small>Atris: Multiplayer Interference</small></center>
+</TD></TR></TABLE>
+
+<P>
+<A NAME="power">
+<B>4.3 Power pieces</B>
+<P>
+We are responsive to user requests, and at a beta-tester's suggestion,
+have added several 'power pieces' to the pool from which your pieces
+are drawn.  (They can be enabled or disabled via the Special Options
+menu). Each one is composed exclusively of one of the following
+tile types:
+<P>
+<CENTER>
+<TABLE CELLPADDING=5 WIDTH=80%>
+  <TR><TH>Tile Type</TH><TH>Image</TH><TH>Description</TH></TR>
+  <TR><TD><B>The Bomb</B></TD>
+      <TD VALIGN=CENTER><IMG SRC="Special-Bomb.jpg"></TD>
+  <TD>This power piece destroys all tiles that are adjacent to it
+      (in the four cardinal directions) when it comes to rest,
+      including garbage tiles.</TD></TR>
+  <TR><TD><B>The Down</B></TD>
+      <TD VALIGN=CENTER><IMG SRC="Special-DownArrow.jpg"></TD>
+    <TD>When it comes to rest, this piece pushes each tile directly
+	beneath it down as far as it can go, skipping any intervening
+	tiles. This has the effect of taking the topmost row of pieces
+	and stuffing them into little nooks and crannies near the bottom,
+	thus freeing more room for you at the top and more densely packing
+	the bottom.</TD></TR> 
+  <TR><TD><B>The Drip</B></TD>
+      <TD VALIGN=CENTER><IMG SRC="Special-Drip.jpg"></TD>
+    <TD>When this piece comes to rest, it and all non-garbage tiles
+    adjacent to it change to be the color most commonly occurring on the
+    board.  This effect spreads out and modifies all non-garbage tiles
+    reachable from the original change, making huge swaths of the playing
+    area mono-colored.
+    </TD></TR>
+  <TR><TD><B>The Skull</B></TD><TD VALIGN=CENTER><IMG
+      SRC="Special-Skull.jpg"></TD> 
+    <TD>When this piece comes to rest, it destroys all non-garbage
+	tiles adjacent to it.  This effect propagates to all tiles
+	that were the same color as an affected tile and were adjacent to
+	it. 
+    </TD></TR>
+</TABLE>
+</CENTER>
+<P>
+<A NAME="score">
+<B>4.4 Scoring</B>
+<TABLE CELLPADDING=3><TR>
+<TD VALIGN=CENTER>
+You obtain points when you clear rows equal to the number of lines cleared
+(in one go) multiplied by the square of your current level. In the <A
+HREF="#solo"><B>Solo Scoring Marathon</B></A> style of game, you can
+put your name on the high score list at the end. 
+</TD><TD>
+<IMG SRC="Atris-HighScore.jpg" HSPACE=10><br>
+<center><small>Atris: High Score List</small></center>
+</TD></TR></TABLE>
+
+<P>
+
+<A NAME="level">
+<B>4.5 Level progression</B>
+<P>
+Your intermediate progression (after you've cleared some boards) is
+represented by stylized "Thumbs Up", "Thumbs Down" and "Neutral Face"
+icons. You need 3 "Thumbs Up" to go up a level. If you have 3 "Thumbs Down"
+you go down a level.
+<P>
+If you have a "Thumbs Up" and a "Thumbs Down", they cancel. If you have a
+"Thumbs Up" and your opponent has a "Thumbs Up", they cancel.
+<P>
+<TABLE CELLPADDING=3>
+  <TR><TH>You Get</TH><TH>Opponent Gets</TH><TH>What Happened</TH></TR>
+  <TR><TD ALIGN=CENTER><IMG SRC="Level-Up.jpg"></TD>
+    <TD ALIGN=CENTER><IMG SRC="Level-Medium.jpg"></TD>
+    <TD>You cleared the level under the time limit.</TD></TR>
+  <TR><TD ALIGN=CENTER><IMG SRC="Level-Medium.jpg"></TD>
+    <TD ALIGN=CENTER><IMG SRC="Level-Down.jpg"></TD>
+    <TD>You cleared the level after the time limit in a game without a
+	hard time limit.</TD></TR>
+  <TR><TD ALIGN=CENTER><IMG SRC="Level-Down.jpg"></TD>
+    <TD ALIGN=CENTER><IMG SRC="Level-Medium.jpg"></TD>
+    <TD>You "<A HREF="Atris-TopOut1.jpg">topped out</A>". </TD></TR>
+  <TR><TD ALIGN=CENTER><IMG SRC="Level-Down.jpg"></TD>
+    <TD ALIGN=CENTER><IMG SRC="Level-Down.jpg"></TD>
+    <TD>Time ran out in a game with a hard time limit.</TD></TR>
+</TABLE>
+<P>
+<A HREF="#top">Table of Contents</A>
+<HR>
+
+<A NAME="bugs">
+<B>5. Troubleshooting</B>
+<P>
+Alizarin Tetris is hardly perfect, although we have gone to some lengths to
+assure stability and platform independence.  This section highlights
+some SDL pointers, atris limitations and common problems.  <A
+HREF="faq.html">Our atris FAQ</A> may also be of use. A good place to
+start for general information is the <a
+href="http://www.libsdl.org/faqs.html">SDL FAQ List</a> (no really:
+it's useful!).  
+<P>
+
+<A NAME="windows">
+<B>5.1 Under Windows</B>
+<P>
+A number of SDL settings are mutable via environment variables. These can
+sometimes be a little tricky to set under Windows, though: check your
+Control Panel.
+<UL>
+    <LI>You can set the environment variable "SDL_AUDIODRIVER" 
+    <UL>
+	<LI>dsound - (default) Use the DirectSound API</LI>
+	<LI>waveout - Use the Win32 MultiMedia API</LI>
+    </UL>
+    </LI>
+    <LI>You can set the environment variable "SDL_VIDEODRIVER" 
+    <UL>
+	<LI>directx - (default) Use the DirectDraw API</LI>
+	<LI>windib - Use the standard Win32 GDI</LI>
+    </UL>
+    </LI>
+</UL>
+
+Known bugs:
+<UL>
+  <LI><B>Full-screen mode</B> is not well-supported. Try selecting
+  "Toggle Full Screen" from the Special Options menu to see if full-screen
+  mode works for you. If nothing happens, do not try to invoke full-screen
+  mode from the command line: it will probably hang your system.
+</UL>
+<P>
+
+If you have trouble:
+
+<UL>
+  <LI>Look in <B>stdout.txt</B> in the directory you ran atris.exe from to
+      get an idea of what's going on.  If you can't figure it out (or
+      you think it indicates a bug), please <A
+      HREF="mailto:wkiri@cs.cornell.edu,weimer@cs.berkeley.edu">send
+      us</A> the entire contents and a description of the problem.
+</UL>
+
+
+<A NAME="linux">
+<B>5.2 Under Linux</B>
+<P>
+A number of SDL settings are mutable via environment variables.
+<UL>
+    <LI>You can set the environment variable "SDL_AUDIODRIVER" 
+    <UL>
+	<LI>dsp - (default) Use the OSS API by opening /dev/dsp</LI>
+	<LI>dma - Use the OSS API to perform DMA access on /dev/dsp</LI>
+	<LI>esd - Connect to the Enlightenment sound audio daemon</LI>
+    </UL>
+    </LI>
+    <LI>You can set the environment variable "SDL_VIDEODRIVER" 
+    <UL>
+	<LI>x11 - (default) Use the X11 windowing system</LI>
+	<LI>fbcon - Use the framegrabber console</LI>
+	<LI>svga - Use the SVGAlib API</LI>
+	<LI>ggi - Use the General Graphics Interface API</LI>
+	<LI>aalib - Use the Ascii Art library (!?)</LI>
+    </UL>
+    </LI>
+</UL>
+    
+
+Known bugs:
+<UL>
+  <LI><B>Conflict with Enlightenment's sound daemon</B>: Under some
+      systems with the Enlightenment sound daemon running, the game
+      will hang on startup if you try to run it while something else
+      is using the sound card.  You can avoid this problem by
+      <OL>
+	<LI>quitting the other application or
+	<LI>running atris with the <B>-q</B> option (to disable
+	    sound).
+      </OL>
+</UL>
+<P>
+
+If you have trouble:
+
+<UL>
+  <LI>Look at the output on stdout. If you can't figure it out (or
+      you think it indicates a bug), please <A
+      HREF="mailto:wkiri@cs.cornell.edu,weimer@cs.berkeley.edu">send
+      us</A> the entire contents and a description of the problem.
+</UL>
+<P>
+
+<A NAME="mac">
+<B>5.3 Under Macintosh</B>
+<P>
+
+Known bugs:
+<UL>
+  <LI><B>Networking</B> will fail.  If you care about this and really
+      want it supported for the Mac, <A
+      HREF="mailto:wkiri@cs.cornell.edu,weimer@cs.berkeley.edu">let us
+      know</A>.
+</UL>
+<P>
+
+If you have trouble:
+
+<UL>
+  <LI>Find your stdout.  We think it might be in a file called
+      stdout.txt. If you can't figure out what's going on (or
+      you think it indicates a bug), please <A
+      HREF="mailto:wkiri@cs.cornell.edu,weimer@cs.berkeley.edu">send
+      us</A> the entire contents and a description of the problem.
+</UL>
+
+<P>
+<A HREF="#top">Table of Contents</A>
+<HR>
+<A NAME="create">
+<B>Appendix A. Create your own styles</B>
+<P>
+
+You can make your own color, shape, and sound styles if you have a
+text editor and some raw materials. Just go into the "styles/"
+sub-directory and make a copy of one of the small text files there
+(say, "Default.Sound" -> "Nifty.Sound"). Now edit your new copy with a
+text editor and change the name ("Default Sound Scheme" -> "My Nifty
+Sounds"). Then change all of the references to other files ("thud.wav"
+-> "my_new_thud.wav"). Re-run Atris: presto! Your choice should be
+visible on one of the menus. If there are any load-time problems, they
+will be displayed on <A HREF="#windows">stdout</A>.
+
+<P>
+<B>Sound Styles:</B> All sound files must be 11025 Hz mono 8-bit WAV files. The
+first line in the file names the style, all of the other non-comment lines
+associate a WAV file with an action in the game. 
+<P>
+<B>Color Styles:</B> All graphic files must be 20x20 (by 24 bit) Windows-style
+Bitmaps. The first line in the file is the name of the style. The second
+line must contain a single integer giving the number of distinct colors
+(bitmaps) defined by the file. The first bitmap will be used to display the
+garbage that starts at the bottom of the screen, the remaining X-1 become
+possible values for tiles in tetris pieces. Note that network play requires
+that 
+<P>
+<B>Piece Styles:</B> The first line gives the name of the style, the next line
+gives the number of distinct piece shapes defined by the style. After that
+you must define that many individual pieces using our amazing ASCII art
+notation. Each piece should be blank-separated from those before and after
+it and should be square (i.e., 3x3 or 4x4 but not 4x3). 
+<P>
+<B>Limitations:</B> If you make any mistakes with these specification files our
+highly advanced parser (cough) will notice and the game will not start.
+Check for errors on <A HREF="#windows">stdout</A>. The configuration system
+is not elegant but it should be quite easy. 
+<P>
+<A HREF="#top">Table of Contents</A>
+<HR>
+
+<address><CENTER> <A HREF="http://www.cs.cornell.edu/home/wkiri/">Kiri
+Wagstaff and Westley Weimer</A> &lt; Email : <A HREF="mailto:wkiri@cs.cornell.edu,weimer@cs.berkeley.edu">wkiri@cs.cornell.edu,weimer@cs.berkeley.edu</A> &gt;</address>
+<!-- hhmts start -->
+Last modified: Fri Nov 10 09:16:16 PST 2000
+<!-- hhmts end -->
+</body> </html>

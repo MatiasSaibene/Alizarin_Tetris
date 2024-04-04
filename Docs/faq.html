@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title>Atris Frequently Asked Questions</title>
+</head>
+<body BGCOLOR=#FFFFFF>
+
+<CENTER>
+<FONT SIZE=+3 COLOR=#3333AA>Alizarin Tetris: Frequently Asked Questions</FONT>
+</CENTER>
+<P>
+
+<!--
+All of the questions listed here come from exchanges with actual
+users.
+-->
+All of the questions listed here were submitted by atris users.
+For more information, see the <a
+href="http://www.cs.berkeley.edu/~weimer/atris">main atris page</a> or the
+<a href="http://www.cs.berkeley.edu/~weimer/atris/Docs/atris.html">on-line
+HTML manual</a>.
+
+<P>
+<HR>
+
+<FONT COLOR=#3333AA>
+<B>Q:</B> Why does my screen saver run extremely slowly while atris is
+	running?</FONT><br>
+<B>A:</B> Atris contains a number of CPU-intensive computations. When
+	the game is waiting for your input, it typically renders a random
+	flaming background: this can dramatically limit the number of CPU
+	slices given to the screen-saver. Similarly, if you have two AI
+	players playing against each other, their lookahead-based
+strategies
+can be a drain on computing resources. Possible solutions:<UL>
+	<LI>Run atris "niced" (see nice(1)), or the equivalent.</LI>
+	<LI>Run atris with the "-n" no-flaming-background option.</LI>
+	</UL>
+<P>
+
+<FONT COLOR=#3333AA>
+<B>Q:</B> Why am I having so much trouble controlling the pieces? </FONT><br>
+<B>A:</B> Atris version 1.0.5 introduced the ability to change the keyboard
+    repeat rate. If you find that the pieces move or rotate too quickly for
+    you, consider changing the setting from within the "Special Options"
+    menu. Let us know if you have any other playability problems. 
+<P>
+
+<FONT COLOR=#3333AA>
+<B>Q:</B> Why is the speed at which pieces fall when they are no longer
+	under a player's control so slow?</FONT><br>
+<B>A:</B> Atris versions 1.0.1 and below mistakenly tied the speed of such
+	pieces to the difficulty level, resulting in a "slow-motion" effect
+	for falling pieces at low levels of difficulty. Atris versions
+	1.0.2 and below had a bug in the routine that draws falling pieces,
+	causing it to update overly large portions of the screen for extra
+	bonus slowness. Beyond that, things can get slow if a large number
+	of pieces are falling at the same time. Let us know if you continue
+	to notice this problem. 
+<P>
+
+<FONT COLOR=#3333AA>
+<B>Q:</B> Every once in a while when there are two players one of the
+	screens fills up with junk for a bit. What gives?</FONT><br>
+<B>A:</B> What you are seeing is the <a
+	href="http://www.cs.berkeley.edu/~weimer/atris/Docs/atris.html#garbage">
+	multiplayer interference</a> aspect of Atris. Basically, player A
+	is seeing the "junk" because player B has done particularly well by
+	clearing a large number of rows at the same time. 
+<P>
+
+<FONT COLOR=#3333AA>
+<B>Q:</B> Sometimes the player seems to die before the garbage has reached
+	the top of the board. Why are you so unfair?</FONT><br>
+<B>A:</B> A player dies or "tops out" when the next piece cannot be placed
+	at the top-center of the board at any rotation. So even if you have
+	plenty of free space on the left and right edges of the board, you
+	will die if you clog up the center all the way to the top.
+<P>
+
+<FONT COLOR=#3333AA>
+<B>Q:</B> Why doesn't the screen flip around in Atris? </FONT><BR>
+<B>A:</B> Perhaps you are confusing Atris with a similar game :-). We have
+	future plans for a "screen rotation" variant on the <a
+	href="http://www.cs.berkeley.edu/~weimer/atris/Docs/atris.html#garbage">
+	multiplayer interference</a> aspect of Atris. As it currently
+	stands, however, there is no such feature. 
+<P>
+
+<FONT COLOR=#3333AA>
+<B>Q:</B> How can I make Atris look like this other tetris game I'm
+thinking of?:</FONT><BR>
+<B>A:</B> You might want to try turning the "Double Difficulty", "Long
+Settle Delay" and "Upward Rotation" Special Options on and the "Power
+Pieces" Special Option off. 
+<P>
+
+<HR>
+<address><CENTER> <A HREF="http://www.cs.cornell.edu/home/wkiri/">Kiri
+Wagstaff and Westley Weimer</A> &lt; Email : <A HREF="mailto:wkiri@cs.cornell.edu,weimer@cs.berkeley.edu">wkiri@cs.cornell.edu,weimer@cs.berkeley.edu</A> &gt;</address>
+<!-- hhmts start -->
+Last modified: Fri Nov 10 09:16:08 PST 2000
+<!-- hhmts end -->
+</body> </html>

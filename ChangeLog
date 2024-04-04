@@ -1,0 +1,44 @@
+			      Alizarin Tetris
+			      ~~~~~~~~~~~~~~~
+Version 1.0.6 - "Delay"
+    * You can now press ctrl-enter to toggle between full-screen mode 
+      and normal mode. Recompile everything with a newer version of SDL,
+      etc. 
+
+Version 1.0.5 - "Donna"
+    * Added an "atris.rc" preference file that saves your choices between
+      runs. Special pieces are no longer on by default.
+    * You may now change the keyboard repeat rate within the game. 
+
+Version 1.0.4 - "Bill"
+    * Added three special options as per Bill's request: "double
+      difficulty", "long settle delay" and "upward rotation". 
+
+Version 1.0.3 - "Olympus"
+    * added four types of Power Pieces as per Yujia's request
+    * factored out the opening menus so that the display is cleaner
+    * the clock no longer ticks if you go into negative "overtime" ...
+    * fixed a bug in the routine that draws falling pieces: it was updating
+      a larger region of the screen than it should have, resulting in
+      sub-optimal performance
+    * license fix: we had previously included the LGPL instead of the GPL
+      as the atris license ... whoops!
+
+Version 1.0.2 - "Nirgal"
+    * the sound effects are now packaged separately 
+
+Version 1.0.1 - "Nirgal"
+    * pieces now fall at a uniform fast rate when you cannot control them
+	(i.e., when things slide after your piece has dropped)
+    * you may now enter a starting level for new players
+    * the game is more fair about placing pieces near the the top of the
+	board
+    * you may now select the AI difficulty
+
+Version 1.0.0 - "Nirgal"
+    * First out-of-house beta. 
+    * Cross-platform compatibility: Win32 and Unix, provided you use SDL.
+    * Multiple Styles: pieces, colors, sounds, etc. 
+    * Multiple Modes: single or multiple player, computer players, network
+    	play, etc. Special AI vs. AI deathmatch mode just for kicks. :-)
+    * It should crash on you less often than previous versions. 
