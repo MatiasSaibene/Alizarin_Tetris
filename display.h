@@ -4,6 +4,7 @@
  *
  * Copyright 2000, Kiri Wagstaff & Westley Weimer
  */
+#pragma once
 #ifndef __DISPLAY_H
 #define __DISPLAY_H
 #include <SDL/SDL_ttf.h>

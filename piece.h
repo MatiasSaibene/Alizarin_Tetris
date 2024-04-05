@@ -4,6 +4,7 @@
  *
  * Copyright 2000, Kiri Wagstaff & Westley Weimer
  */
+#pragma once
 #ifndef __PIECE_H
 #define __PIECE_H
 

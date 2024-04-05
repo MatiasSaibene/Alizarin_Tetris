@@ -1,5 +1,10 @@
 			      Alizarin Tetris
 			      ~~~~~~~~~~~~~~~
+Version 1.1 - "Renovatio" - April 4, 2024
+    *Alizarin Tetris can now be compiled on a modern Linux system.
+    All project dependencies are now included in a single, monstrous atris.c.
+    Changed compile method to CMake.
+
 Version 1.0.6 - "Delay"
     * You can now press ctrl-enter to toggle between full-screen mode 
       and normal mode. Recompile everything with a newer version of SDL,

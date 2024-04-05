@@ -4,6 +4,7 @@
  *
  * Copyright 2000, Kiri Wagstaff & Westley Weimer
  */
+#pragma once
 
 #ifndef __SOUND_H
 #define __SOUND_H

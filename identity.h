@@ -4,6 +4,7 @@
  *
  * Copyright 2000, Kiri Wagstaff & Westley Weimer
  */
+#pragma once
 #ifndef __IDENTITY_H
 #define __IDENTITY_H
 

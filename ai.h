@@ -4,6 +4,7 @@
  *
  * Copyright 2000, Westley Weimer & Kiri Wagstaff
  */
+#pragma once
 #ifndef __AI_H
 #define __AI_H
 

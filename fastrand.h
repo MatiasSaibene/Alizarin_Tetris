@@ -1,4 +1,4 @@
-
+#pragma once
 /* Declarations for the fast random functions */
 
 #include <SDL/SDL_stdinc.h>

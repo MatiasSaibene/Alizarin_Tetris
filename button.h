@@ -4,6 +4,8 @@
  *
  * Copyright 2000, Westley Weimer & Kiri Wagstaff
  */
+#pragma once
+
 #ifndef __BUTTON_H
 #define __BUTTON_H
 

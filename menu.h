@@ -4,7 +4,7 @@
  *
  * Copyright 2000, Kiri Wagstaff & Westley Weimer
  */
-
+#pragma once
 #ifndef __MENU_H
 #define __MENU_H
 

@@ -5,7 +5,7 @@
  *
  * Copyright 2000, Westley Weimer & Kiri Wagstaff
  */
-
+#pragma once
 #ifndef __ATRIS_H
 #define __ATRIS_H
 

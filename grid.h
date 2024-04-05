@@ -4,6 +4,7 @@
  *
  * Copyright 2000, Kiri Wagstaff & Westley Weimer
  */
+#pragma once
 #ifndef __GRID_H
 #define __GRID_H
 #include "piece.h"

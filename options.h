@@ -4,6 +4,7 @@
  *
  * Copyright 2000, Westley Weimer & Kiri Wagstaff
  */
+#pragma once
 #ifndef __OPTIONS_H
 #define __OPTIONS_H
 

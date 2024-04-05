@@ -1,0 +1,1 @@
+Just run the compile_CMake.sh script, also remember to copy the Docs, graphics and styles folders to the build folder. Change to the build directory and run the atris executable.
