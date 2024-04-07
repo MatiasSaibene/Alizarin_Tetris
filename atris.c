@@ -8941,7 +8941,7 @@ main(int argc, char *argv[])
     SDL_Event event;
 
     umask(000);
-    Debug("\tWelcome to Alizarin Tetris (version %s - %s)\n", VERSION, "Delay" );
+    Debug("\tWelcome to Alizarin Tetris (version %s - %s)\n", VERSION, "Renovatio" );
     Debug("\t~~~~~~~~~~~~~~~~~~~~~~~~~~ (%s)\n", __DATE__);
 
 #ifdef HAVE_WINSOCK_H

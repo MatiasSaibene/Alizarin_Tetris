@@ -93,7 +93,7 @@
 /* #undef TM_IN_SYS_TIME */
 
 /* Version number of package */
-#define VERSION "1.0.6"
+#define VERSION "1.1.0"
 
 /* Define to empty if `const' does not conform to ANSI C. */
 /* #undef const */
