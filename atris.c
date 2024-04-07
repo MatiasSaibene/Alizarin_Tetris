@@ -8991,11 +8991,11 @@ main(int argc, char *argv[])
 	Debug("Changing directory to [%s]\n",ATRIS_LIBDIR);
 
     /* Set up the font */
-    sfont = TTF_OpenFont("graphics/NewMediumNormal.ttf",18);
-     font = TTF_OpenFont("graphics/NewMediumNormal.ttf",24);
-    lfont = TTF_OpenFont("graphics/NewMediumNormal.ttf",36);
-    hfont = TTF_OpenFont("graphics/NewMediumNormal.ttf",96);
-    if ( font == NULL ) PANIC("Couldn't open [graphics/NewMediumNormal.ttf].", ATRIS_LIBDIR); 
+    sfont = TTF_OpenFont("graphics/DejaVuSans-BoldOblique.ttf",12);
+     font = TTF_OpenFont("graphics/DejaVuSans-BoldOblique.ttf",20);
+    lfont = TTF_OpenFont("graphics/DejaVuSans-BoldOblique.ttf",28);
+    hfont = TTF_OpenFont("graphics/DejaVuSans-BoldOblique.ttf",72);
+    if ( font == NULL ) PANIC("Couldn't open [graphics/DejaVuSans-BoldOblique.ttf].", ATRIS_LIBDIR); 
     TTF_SetFontStyle(font, renderstyle);
     TTF_SetFontStyle(sfont, renderstyle);
     /* Initialize scores */
